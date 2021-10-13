@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap') ;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+body, input, textarea, button, .select-list {
+  font-size: 1.2rem;
+}
+
+h1, h2, h3, p, ul {
+  margin: 1rem 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+input, textarea, select {
+  background: white;
+  border: transparent;
+  border-radius: 0.2rem;
+  margin-bottom: 14px;
+  padding: 0.8rem;
+  transition: 0.2s;
+  resize: vertical;
+}
+
+input:not(.imageInput), textarea, select {
+  border-bottom: 2.3px solid #036b52;
+}
+
+.imageInput {
+  margin-top: 7px;
+  padding-left: 54px;
+  border: 2.3px solid #036b52;
+  height: 45px;
+}
+
+.fa-link {
+  position:absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 48px;
+  height: 45px;
+  padding: 10px;
+  background-color: #036b52;
+  color: white;
+  border-radius: 0.2rem;
+}
+
+.image-container {
+  position:relative;
+}
+
+form span {
+  font-weight: 600;
+  display: block;
+}
+
+input:not( [ type = 'number' ] ), textarea, select {
+  display: block;
+  width: 450px;
+}
+
+input:focus, textarea:focus {
+  background: white;
+  box-shadow: 0 0 3px -3px #036b52;
+  outline: none;
+}
+
+input[type="checkbox"] {
+	appearance: none;
+  margin: 0 auto 15px auto;
+	width: 20px;
+	height: 20px;
+	border: 2px solid #555555;
+	background-clip: content-box;
+	padding: 1px;
+}
+
+input[type="checkbox"]:checked {
+	background-color: #036b52;
+}
+
+button {
+  background: #036b52;
+  border: none;
+  border-radius: 0.2rem;
+  color: white;
+  cursor: pointer;
+  padding: 0.8rem 1.6rem;
+  transition: 0.1s;
+}
+
+button:hover, button:focus {
+  background: #19f;
+  box-shadow: 0 0 0 3px #adf , 0 0 0 4px #adf;
+  outline: none;
+}
+
+button:active {
+  box-shadow: 0 0 0 3px #19f , 0 0 0 4px #19f;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.main-container {
+  background-color: #fafafa;
+  display: flex;
+  height: 100vh;
+  background: #023031;
+}
+
+.form-container {
+  background-color: white;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 0 0 150px 0;
+}
+
+.form-container h1 {
+  margin-bottom: 35px;
+}
+
+.card-container {
+  align-items: center;
+  background: #023031;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.flip-card {
+  height: 549px;
+  perspective: 1000px;
+  width: 368px;
+}
+
+.flip-card-inner {
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  width: 100%;
+}
+
+.flip-card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card {
+  align-items: center;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+/* Linear gradient source https://codepen.io/AlexBezuska/pen/zyiCs */
+/* .normal {
+  background: linear-gradient(-72deg, #ca7345, #ffdeca 16%, #ca7345 21%, #ffdeca 24%, #a14521 27%, #ca7345 36%, #ffdeca 45%, #ffdeca 60%, #ca7345 72%, #ffdeca 80%, #ca7345 84%);
+  border-radius: 10px;
+}
+
+.raro {
+  background: linear-gradient(-72deg, #dedede, white 16%, #dedede 21%, white 24%, #454545 27%, #dedede 36%, white 45%, white 60%, #dedede 72%, white 80%, #dedede 84%, #a1a1a1);
+  border-radius: 10px;
+}
+
+.muitoraro {
+  background: linear-gradient(-72deg, #ffde45, white 16%, #ffde45 21%, white 24%, #452100 27%, #ffde45 36%, white 45%, white 60%, #ffde45 72%, white 80%, #ffde45 84%, #452100);
+  border-radius: 10px;
+} */
+
+.card-back {
+  background: url('https://i.ibb.co/HVzns6J/card-back-background.png') no-repeat center fixed;
+  background-size: cover;
+  transform: rotateY(180deg);
+}
+
+.card-border {
+  background: #036b52;
+  border: 15px solid #036b52;
+  border-radius: 10px;
+  height: 529px;
+  left: 884px;
+  top: 293px;
+  width: 348px;
+}
+
+.card-title-container {
+  background: #023031;
+  border-radius: 10px 10px 0 0;
+  height: 40px;
+  margin: -17px 0;
+  position: relative;
+  width: 317px;
+  z-index: 3;
+}
+
+.card-title {
+  color: white;
+  padding-right: 15px;
+  text-align: right;
+}
+
+.card-image {
+  height: 278px;
+  margin-top: 8px;
+  width: 317px;
+  z-index: 2;
+  object-fit: cover;
+}
+
+.flip-btn {
+  margin-top: 30px;
+}
+
+.description {
+  background: #036b52;
+  color: white;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 300;
+  height: 60px;
+  line-height: 13px;
+  margin: -37px -3px;
+  padding: 10px;
+  position: relative;
+  transform: rotate(-4.92deg);
+  width: 330px;
+  z-index: 2;
+}
+
+.attributes {
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+  height: 188px;
+  margin-top: 7px;
+  padding: 50px 15px;
+  text-align: center;
+}
+
+.points-left {
+  text-align: right;
+  margin: -13px 0;
+  padding-right: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.attribute-container {
+  display: flex;
+  height: 30.74px;
+  justify-content: space-around;
+  margin-bottom: 5px;
+  width: 284px;
+}
+
+.attr-label {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+}
+
+.attr-label input {
+  width: 300px;
+}
+
+.attribute-number {
+  background: #023031;
+  border-radius: 0 10px 10px 0;
+  color: white;
+  height: 30.74px;
+  padding: 4px;
+  width: 48px;
+}
+
+.rarity {
+  color: transparent;
+}
+
+/* Source do Golden Text
+https://codingartistweb.com/2020/01/gold-text-effect-css-text-effect/ */
+
+.trunfo-title {
+  background-clip: text;
+  background-image: linear-gradient(to right, #462523 0, #cb9b51 22%, #f6e27a 45%);
+  color: transparent;
+  font-size: 15px;
+  font-weight: 700;
+  margin: -45px 0 0 2px;
+  padding: 2px 9px;
+}
+
+.super-trunfo {
+  text-align: center;
+}
+
+.saveBtn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.save-btn {
+  width: 200px;
+}
+
+.all-cards {
+  align-items: center;
+  background-color: #023031;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.cards-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  min-height: 70vh;
+  padding: 30px;
+  width: 1400px;
+}
+
+.card-btn {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.card-btn button {
+  margin-top: 15px;
+  width: 120px;
+}
+
+.search {
+  color: white;
+  margin-top: 50px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1400px) {
+  .main-container {
+    height: 900px;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-container {
+    height: 900px;
+  }
+}
