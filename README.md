@@ -1,10 +1,10 @@
 # React Tryunfo
 <br>
 
-<img src="src/assets/tryunfo-preview.png" alt="Movie Cards Preview" width="600"/>
+<img src="src/assets/tryunfo-preview.png" alt="Tryunfo Preview" width="600"/>
 <br />
 
-<img src="src/assets/tryunfo-preview2.png" alt="Movie Cards Preview" width="600"/>
+<img src="src/assets/tryunfo-preview2.png" alt="Tryunfo Preview" width="600"/>
 <br />
 
 This was the second React project developed during Trybe's Front-End module.
