@@ -19,22 +19,18 @@ class Card extends React.Component {
     const { flipped } = this.state;
 
     return (
-      <>
-        <div 
-          className="flip-card" 
-          onMouseEnter={ this.toggleFlipped } 
-          onMouseLeave={ this.toggleFlipped }
+      <div
+        className="flip-card"
+        onMouseEnter={this.toggleFlipped}
+        onMouseLeave={this.toggleFlipped}
+      >
+        <div
+          className={flipped ? 'flip-card-inner is-flipped' : 'flip-card-inner'}
         >
-          <div
-            className={
-              flipped ? 'flip-card-inner is-flipped' : 'flip-card-inner'
-            }
-          >
-            <CardFront { ...this.props } />
-            <CardBack />
-          </div>
+          <CardFront {...this.props} />
+          <CardBack />
         </div>
-      </>
+      </div>
     );
   }
 }

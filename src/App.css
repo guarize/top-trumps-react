@@ -178,22 +178,6 @@ button:disabled {
   width: 100%;
 }
 
-/* Linear gradient source https://codepen.io/AlexBezuska/pen/zyiCs */
-/* .normal {
-  background: linear-gradient(-72deg, #ca7345, #ffdeca 16%, #ca7345 21%, #ffdeca 24%, #a14521 27%, #ca7345 36%, #ffdeca 45%, #ffdeca 60%, #ca7345 72%, #ffdeca 80%, #ca7345 84%);
-  border-radius: 10px;
-}
-
-.raro {
-  background: linear-gradient(-72deg, #dedede, white 16%, #dedede 21%, white 24%, #454545 27%, #dedede 36%, white 45%, white 60%, #dedede 72%, white 80%, #dedede 84%, #a1a1a1);
-  border-radius: 10px;
-}
-
-.muitoraro {
-  background: linear-gradient(-72deg, #ffde45, white 16%, #ffde45 21%, white 24%, #452100 27%, #ffde45 36%, white 45%, white 60%, #ffde45 72%, white 80%, #ffde45 84%, #452100);
-  border-radius: 10px;
-} */
-
 .card-back {
   background: url('https://i.ibb.co/HVzns6J/card-back-background.png') no-repeat center fixed;
   background-size: cover;
