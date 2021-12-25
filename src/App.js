@@ -32,7 +32,7 @@ class App extends React.Component {
 
   componentDidMount() {
     const cards = localStorage.getItem('newCard');
-    this.setState({ newCard: JSON.parse(cards) })
+    this.setState({ newCard: JSON.parse(cards) });
   }
 
   onInputChange = ({ target }) => {
@@ -50,10 +50,10 @@ class App extends React.Component {
   checkTextInputs = () => {
     const { cardName, cardDescription, cardImage, cardRare } = this.state;
     if (
-      cardName === ''
-      || cardDescription === ''
-      || cardImage === ''
-      || cardRare === ''
+      cardName === '' ||
+      cardDescription === '' ||
+      cardImage === '' ||
+      cardRare === ''
     ) {
       return false;
     }
@@ -70,13 +70,13 @@ class App extends React.Component {
     const minAttrValue = 0;
     const sumAttr = attr1Value + attr2Value + attr3Value > maxSum;
     if (
-      sumAttr
-      || attr1Value < minAttrValue
-      || attr1Value > maxAttrValue
-      || attr2Value < minAttrValue
-      || attr2Value > maxAttrValue
-      || attr3Value < minAttrValue
-      || attr3Value > maxAttrValue
+      sumAttr ||
+      attr1Value < minAttrValue ||
+      attr1Value > maxAttrValue ||
+      attr2Value < minAttrValue ||
+      attr2Value > maxAttrValue ||
+      attr3Value < minAttrValue ||
+      attr3Value > maxAttrValue
     ) {
       return false;
     }
@@ -94,7 +94,7 @@ class App extends React.Component {
     event.preventDefault();
     const { newCard, hasTrunfo, ...allStates } = this.state;
     this.setState((prev) => ({
-      newCard: [...prev.newCard, allStates],
+      newCard: [prev.newCard ? prev.newCard : [], allStates],
       hasTrunfo: allStates.cardTrunfo ? true : hasTrunfo,
       ...initialState,
     }));
@@ -125,13 +125,13 @@ class App extends React.Component {
     }
 
     return newCard;
-  }
+  };
 
   handleFormSubmit = (event) => {
     event.preventDefault();
     const { newCard } = this.state;
     localStorage.setItem('newCard', JSON.stringify(newCard));
-  }
+  };
 
   render() {
     const { newCard } = this.state;
@@ -139,37 +139,39 @@ class App extends React.Component {
       <>
         <div className="main-container">
           <div className="form-container">
-            <h1>Adicionar nova carta</h1>
+            <h1>Add New Card</h1>
             <Form
-              { ...this.state }
-              onInputChange={ this.onInputChange }
-              onSaveButtonClick={ this.onSaveButtonClick }
+              {...this.state}
+              onInputChange={this.onInputChange}
+              onSaveButtonClick={this.onSaveButtonClick}
             />
           </div>
           <div className="card-container">
-            <Card { ...this.state } />
+            <Card {...this.state} />
           </div>
         </div>
         <div className="all-cards">
           <SearchBars
-            { ...this.state }
-            onInputChange={ this.onInputChange }
-            handleFormSubmit={ this.handleFormSubmit }
+            {...this.state}
+            onInputChange={this.onInputChange}
+            handleFormSubmit={this.handleFormSubmit}
           />
           <div className="cards-display">
-            {newCard !== undefined
-            && this.filterNameRarity().map((elem) => (
-              <div key={ elem.cardName } className="card-btn">
-                <Card { ...elem } />
-                <button
-                  data-testid="delete-button"
-                  type="button"
-                  onClick={ () => this.deleteCard(elem.cardName, elem.cardTrunfo) }
-                >
-                  Excluir
-                </button>
-              </div>
-            ))}
+            {newCard &&
+              this.filterNameRarity().map((elem, index) => (
+                <div key={index} className="card-btn">
+                  <Card {...elem} />
+                  <button
+                    data-testid="delete-button"
+                    type="button"
+                    onClick={() =>
+                      this.deleteCard(elem.cardName, elem.cardTrunfo)
+                    }
+                  >
+                    Delete
+                  </button>
+                </div>
+              ))}
           </div>
         </div>
       </>

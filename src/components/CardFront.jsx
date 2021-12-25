@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import emptyCard from '../assets/empty-card-placeholder.png';
 
 class CardFront extends React.Component {
   render() {
@@ -15,7 +16,11 @@ class CardFront extends React.Component {
     } = this.props;
 
     return (
-      <div className={ `card card-front ${cardRare.replace(/\s/g, '')}` }>
+      <div
+        className={`card card-front ${
+          cardRare ? cardRare.replace(/\s/g, '') : ''
+        }`}
+      >
         <div className="card-border">
           <div className="card-title-container">
             <h2 className="card-title" data-testid="name-card">
@@ -24,7 +29,7 @@ class CardFront extends React.Component {
             <div>
               {cardTrunfo && (
                 <p className="trunfo-title" data-testid="trunfo-card">
-                  Super Trunfo
+                  Super Trump
                 </p>
               )}
             </div>
@@ -33,16 +38,13 @@ class CardFront extends React.Component {
             {cardImage !== '' ? (
               <img
                 className="card-image"
-                src={ cardImage }
-                alt={ cardName }
+                src={cardImage}
+                alt={cardName}
                 data-testid="image-card"
               />
             ) : (
-              <img
-                className="card-image"
-                src="https://i.ibb.co/KV5KwPz/200x200-0000007f.png"
-                alt="blank"
-              />)}
+              <img className="card-image" src={emptyCard} alt="blank" />
+            )}
           </div>
           <div>
             <p className="description" data-testid="description-card">
@@ -85,14 +87,14 @@ class CardFront extends React.Component {
 }
 
 CardFront.propTypes = {
-  cardName: PropTypes.string.isRequired,
-  cardDescription: PropTypes.string.isRequired,
-  cardAttr1: PropTypes.string.isRequired,
-  cardAttr2: PropTypes.string.isRequired,
-  cardAttr3: PropTypes.string.isRequired,
-  cardImage: PropTypes.string.isRequired,
-  cardRare: PropTypes.string.isRequired,
-  cardTrunfo: PropTypes.bool.isRequired,
+  cardName: PropTypes.string,
+  cardDescription: PropTypes.string,
+  cardAttr1: PropTypes.string,
+  cardAttr2: PropTypes.string,
+  cardAttr3: PropTypes.string,
+  cardImage: PropTypes.string,
+  cardRare: PropTypes.string,
+  cardTrunfo: PropTypes.bool,
 };
 
 export default CardFront;

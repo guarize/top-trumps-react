@@ -22,7 +22,7 @@ class Form extends React.Component {
     return (
       <form>
         <label htmlFor="name-input">
-          <span>Nome</span>
+          <span>Name</span>
           <input
             type="text"
             data-testid="name-input"
@@ -34,7 +34,7 @@ class Form extends React.Component {
         </label>
 
         <label htmlFor="description-input">
-          <span>Descrição</span>
+          <span>Description</span>
           <textarea
             id="description-input"
             name="cardDescription"
@@ -45,7 +45,7 @@ class Form extends React.Component {
         </label>
 
         <label className="attr-label" htmlFor="attr1-input">
-          <span>Atributo 01</span>
+          <span>Attribute 01</span>
           <input
             type="number"
             id="attr1-input"
@@ -57,7 +57,7 @@ class Form extends React.Component {
         </label>
 
         <label className="attr-label" htmlFor="attr2-input">
-          <span>Atributo 02</span>
+          <span>Attribute 02</span>
           <input
             type="number"
             id="attr2-input"
@@ -69,7 +69,7 @@ class Form extends React.Component {
         </label>
 
         <label className="attr-label" htmlFor="attr3-input">
-          <span>Atributo 03</span>
+          <span>Attribute 03</span>
           <input
             type="number"
             id="attr3-input"
@@ -81,11 +81,11 @@ class Form extends React.Component {
         </label>
 
         <div className="points-left">
-          <p>Pontos Restantes: { 210 - (Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3)) }</p>
+          <p>Points Left: { 210 - (Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3)) }</p>
         </div>
 
         <label htmlFor="imageSrc">
-          <span>Imagem</span>
+          <span>Image</span>
           <div className="image-container">
             <BsLink45Deg className="fa-link" />
             <input
@@ -101,7 +101,7 @@ class Form extends React.Component {
         </label>
 
         <label htmlFor="rarity">
-        <span>Raridade</span>
+        <span>Rarity</span>
           <select
             id="rarity"
             data-testid="rare-input"
@@ -111,17 +111,17 @@ class Form extends React.Component {
             onChange={ onInputChange }
           >
             <option value="normal">Normal</option>
-            <option value="raro">Raro</option>
-            <option value="muito raro">Muito Raro</option>
+            <option value="raro">Rare</option>
+            <option value="muito raro">Very Rare</option>
           </select>
         </label>
 
         {hasTrunfo ? (
-          <p className="super-trunfo">Você já tem um Super Trunfo em seu baralho</p>
+          <p className="super-trunfo">You already have a Super Trump in your deck!</p>
         ) : (
           <div className="super-trunfo">
             <label className="checkbox-label" htmlFor="superTrump">
-              <span>Super Trunfo</span>
+              <span>Super Trump</span>
               <input
                 type="checkbox"
                 id="superTrump"
@@ -143,7 +143,7 @@ class Form extends React.Component {
             disabled={ isSaveButtonDisabled }
             onClick={ onSaveButtonClick }
           >
-            Salvar
+            Save
           </button>
         </div>
       </form>

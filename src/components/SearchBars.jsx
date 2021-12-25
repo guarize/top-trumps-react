@@ -6,14 +6,14 @@ class SearchBars extends React.Component {
     const { searchName, onInputChange, searchRarity, searchTrunfo, handleFormSubmit } = this.props;
     return (
       <div className="search">
-        <button type="button" onClick={ handleFormSubmit }>Salvar Cartas</button>
-        <h2>Filtros de Busca</h2>
+        <button type="button" onClick={ handleFormSubmit }>Save Cards</button>
+        <h2>Search Filters</h2>
         <input
           type="text"
           data-testid="name-filter"
           value={ searchName }
           name="searchName"
-          placeholder="Nome da Carta"
+          placeholder="Card's Name"
           onChange={ onInputChange }
         />
         <select
@@ -23,14 +23,14 @@ class SearchBars extends React.Component {
           value={ searchRarity }
           onChange={ onInputChange }
         >
-          <option value="todas">Todas</option>
+          <option value="todas">All</option>
           <option value="normal">Normal</option>
-          <option value="raro">Raro</option>
-          <option value="muito raro">Muito Raro</option>
+          <option value="raro">Rare</option>
+          <option value="muito raro">Very Rare</option>
         </select>
         <div className="super-trunfo">
           <label htmlFor="searchTrunfo">
-            Super Trunfo
+            Super Trump
             <input
               type="checkbox"
               id="searchTrunfo"
